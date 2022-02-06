@@ -3,5 +3,8 @@
 
 angular.module('App')
   .controller('MainController', function ($scope) {
-    $scope.message = 'MainController';
+
+    var MainAccessor = instantiate('MainAccessor', 'MainAccessor');
+    MainAccessor.initialize();
+    $scope.message= MainAccessor.get('name') + '\ninitialized : '+  MainAccessor.initialized;
   });
