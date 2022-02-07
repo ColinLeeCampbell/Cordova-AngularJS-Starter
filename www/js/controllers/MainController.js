@@ -6,5 +6,7 @@ angular.module('App')
 
     var MainAccessor = instantiate('MainAccessor', 'MainAccessor');
     MainAccessor.initialize();
-    $scope.message= MainAccessor.get('name') + '\ninitialized : '+  MainAccessor.initialized;
+    MainAccessor.provideInput('state', 1);
+    MainAccessor.react();
+    $scope.message = MainAccessor.latestOutput('output');
   });

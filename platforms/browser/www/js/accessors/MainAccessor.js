@@ -1,11 +1,11 @@
 exports.setup = function () {
-    this.input('name');
-    this.output('greeting');
+    this.input('state');
+    this.output('output');
 };
 exports.initialize = function () {
-    this.setDefault('name','Main Accessor');
-    this.addInputHandler('name', function () {
-        this.send('greeting', 'Hello World, ' + this.get('name')); 
+    this.setDefault('state', 0);
+    this.addInputHandler('state', function () {
+        this.send('output', 'Sending state: ' + this.get('state') + ' to device'); 
     });
     
 };
